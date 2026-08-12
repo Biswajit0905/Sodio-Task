@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Enquiry {
+  id                    String    @id @default(uuid())
+  originalText          String
+  fromName              String
+  fromEmail             String
+  receivedAt            DateTime
+  status                String    @default("NEW") // "NEW", "CONTACTED", "QUALIFIED", "DROPPED"
+  priority              String    @default("LOW") // "HIGH", "MEDIUM", "LOW"
+  processingStatus      String    @default("PENDING") // "PENDING", "PROCESSING", "COMPLETED", "FAILED"
+  isGenuine             Boolean   @default(true)
+  serviceLine           String    @default("OTHER") // "AI", "BLOCKCHAIN", "WEB", "MOBILE", "GAME", "OTHER"
+  summary               String    @default("")
+  timeline              String    @default("")
+  budget                String    @default("")
+  
+  // Normalized budget in USD
+  normalizedBudgetMin      Float?
+  normalizedBudgetMax      Float?
+  normalizedBudgetCurrency String?
+  
+  // Normalized timeline
+  normalizedTimelineStart  DateTime?
+  
+  // JSON metadata stored as text
+  originalFields        String    @default("{}") // Extracted LLM fields (original)
+  currentFields         String    @default("{}") // Current human-edited fields
+  
+  // Double submission / follow-up mapping
+  isFollowUp            Boolean   @default(false)
+  parentId              String?
+  parent                Enquiry?  @relation("FollowUps", fields: [parentId], references: [id])
+  followUps             Enquiry[] @relation("FollowUps")
+  
+  errorMessage          String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+}
