@@ -72,6 +72,11 @@
   letter-spacing: 0.05em;
 }
 
+.table td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
 .sortableHeader {
   cursor: pointer;
   user-select: none;
