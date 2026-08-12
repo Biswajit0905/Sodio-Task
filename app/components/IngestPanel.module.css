@@ -1,0 +1,148 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.tabHeaders {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tabBtn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 1rem;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+  outline: none;
+  text-align: center;
+}
+
+.tabBtn:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.activeTab {
+  color: var(--accent-cyan);
+  border-bottom: 2px solid var(--accent-cyan);
+  background-color: rgba(0, 242, 254, 0.04);
+}
+
+.tabContent {
+  padding: 1.5rem;
+}
+
+.dropzone {
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dropzone:hover {
+  border-color: var(--accent-cyan);
+  background-color: rgba(0, 242, 254, 0.02);
+}
+
+.dropzoneActive {
+  border-color: var(--accent-cyan);
+  background-color: rgba(0, 242, 254, 0.08);
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dropzone h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.dropzone p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.spinner {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--accent-cyan);
+  animation: pulse 1.5s infinite alternate;
+}
+
+.pasteArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.textarea {
+  width: 100%;
+  resize: vertical;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  padding: 0.75rem;
+}
+
+.pasteActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ingestBtn {
+  background: var(--accent-gradient);
+  color: #07080a;
+  border: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  box-shadow: 0 4px 12px rgba(0, 242, 254, 0.2);
+}
+
+.ingestBtn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.ingestBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ingestBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.errorMessage {
+  background-color: rgba(255, 59, 48, 0.1);
+  border: 1px solid rgba(255, 59, 48, 0.2);
+  color: var(--status-failed-text);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}

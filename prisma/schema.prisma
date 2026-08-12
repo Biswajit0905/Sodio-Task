@@ -15,6 +15,7 @@ model Enquiry {
   originalText          String
   fromName              String
   fromEmail             String
+  company               String    @default("Unknown")
   receivedAt            DateTime
   status                String    @default("NEW") // "NEW", "CONTACTED", "QUALIFIED", "DROPPED"
   priority              String    @default("LOW") // "HIGH", "MEDIUM", "LOW"

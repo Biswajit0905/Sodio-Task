@@ -1,0 +1,289 @@
+.container {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.controlsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.searchWrapper {
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+.filtersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.filterGroup label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.filterGroup select {
+  width: 100%;
+  cursor: pointer;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.table th {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-bottom: 2px solid var(--border-color);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sortableHeader {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortableHeader:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.row {
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.15s ease;
+}
+
+.row:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.selectedRow {
+  background-color: rgba(0, 242, 254, 0.04);
+  border-left: 3px solid var(--accent-cyan);
+}
+
+.selectedRow:hover {
+  background-color: rgba(0, 242, 254, 0.06);
+}
+
+.processingRow {
+  opacity: 0.6;
+  background-color: rgba(255, 255, 255, 0.01);
+  cursor: wait;
+}
+
+.noDataCell {
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Badge styling */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Priority Badges */
+.priorityHigh {
+  background-color: var(--priority-high-bg);
+  color: var(--priority-high-text);
+  border: 1px solid rgba(255, 69, 58, 0.2);
+}
+
+.priorityMedium {
+  background-color: var(--priority-medium-bg);
+  color: var(--priority-medium-text);
+  border: 1px solid rgba(255, 159, 10, 0.2);
+}
+
+.priorityLow {
+  background-color: var(--priority-low-bg);
+  color: var(--priority-low-text);
+  border: 1px solid rgba(152, 165, 181, 0.2);
+}
+
+/* Status Badges */
+.statusNew {
+  background-color: var(--status-new-bg);
+  color: var(--status-new-text);
+  border: 1px solid rgba(52, 199, 89, 0.2);
+}
+
+.statusContacted {
+  background-color: var(--status-contacted-bg);
+  color: var(--status-contacted-text);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+}
+
+.statusQualified {
+  background-color: var(--status-qualified-bg);
+  color: var(--status-qualified-text);
+  border: 1px solid rgba(175, 82, 222, 0.2);
+}
+
+.statusDropped {
+  background-color: var(--status-dropped-bg);
+  color: var(--status-dropped-text);
+  border: 1px solid rgba(142, 142, 147, 0.2);
+}
+
+/* Service Badges */
+.serviceAI {
+  background-color: var(--service-ai-bg);
+  color: var(--service-ai-text);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+.serviceBlockchain {
+  background-color: var(--service-blockchain-bg);
+  color: var(--service-blockchain-text);
+  border: 1px solid rgba(255, 0, 128, 0.2);
+}
+
+.serviceWeb {
+  background-color: var(--service-web-bg);
+  color: var(--service-web-text);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+}
+
+.serviceMobile {
+  background-color: var(--service-mobile-bg);
+  color: var(--service-mobile-text);
+  border: 1px solid rgba(255, 191, 0, 0.2);
+}
+
+.serviceGame {
+  background-color: var(--service-game-bg);
+  color: var(--service-game-text);
+  border: 1px solid rgba(157, 0, 255, 0.2);
+}
+
+.serviceOther {
+  background-color: var(--service-other-bg);
+  color: var(--service-other-text);
+  border: 1px solid rgba(142, 142, 147, 0.2);
+}
+
+/* Contact Cell Details */
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem 0;
+}
+
+.contactName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contactEmail {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.companyName {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.followUpBadge {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #ff9f0a;
+  background-color: rgba(255, 159, 10, 0.08);
+  border: 1px solid rgba(255, 159, 10, 0.2);
+  padding: 0.05rem 0.375rem;
+  border-radius: 4px;
+  margin-top: 0.125rem;
+}
+
+.spamIndicator {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--status-failed-text);
+  background-color: rgba(255, 59, 48, 0.08);
+  border: 1px solid rgba(255, 59, 48, 0.2);
+  padding: 0.05rem 0.375rem;
+  border-radius: 4px;
+  margin-top: 0.125rem;
+}
+
+/* Table Text Values */
+.summaryText {
+  color: var(--text-primary);
+  font-weight: 500;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.budgetValue {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.timelineValue {
+  color: var(--text-secondary);
+}
+
+.dateValue {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.processingDot {
+  display: inline-block;
+  animation: rotateSpinner 2s infinite linear;
+}
+
+@keyframes rotateSpinner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

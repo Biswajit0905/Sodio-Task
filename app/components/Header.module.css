@@ -1,0 +1,92 @@
+.header {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.titleArea {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoBadge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent-gradient);
+  color: #07080a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.3);
+}
+
+.title {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 0.125rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* Custom stats card wrapper styling */
+:global(.styles_statCard__XYZ) {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.25rem 0;
+}
+
+.statFooter {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.highVal {
+  color: var(--priority-high-text);
+}
+
+.activeQueue {
+  color: var(--accent-cyan);
+  animation: textPulse 1.5s infinite alternate;
+}
+
+@keyframes textPulse {
+  0% {
+    text-shadow: 0 0 4px rgba(0, 242, 254, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
+  }
+}

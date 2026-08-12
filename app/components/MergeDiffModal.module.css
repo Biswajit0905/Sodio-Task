@@ -1,0 +1,238 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(3, 4, 6, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.modal {
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  animation: modalReveal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+@keyframes modalReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modalHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalHeader h2 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.75rem;
+  cursor: pointer;
+  outline: none;
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  color: var(--text-primary);
+}
+
+.modalBody {
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.desc strong {
+  color: var(--status-new-text);
+}
+
+.bulkActions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.actionLink {
+  background: none;
+  border: none;
+  color: var(--accent-cyan);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.actionLink:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  color: var(--text-muted);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.row {
+  transition: background-color 0.2s;
+}
+
+.row:hover {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.diffRow {
+  background-color: rgba(200, 150, 0, 0.02);
+}
+
+.diffRow:hover {
+  background-color: rgba(200, 150, 0, 0.04);
+}
+
+.fieldName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.currentValCell {
+  color: var(--text-secondary);
+}
+
+.newValCell {
+  color: var(--accent-cyan);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--accent-cyan);
+}
+
+.matchCheck {
+  color: var(--text-muted);
+  font-weight: bold;
+}
+
+.ignoredBadge {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.acceptedBadge {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  background-color: rgba(0, 242, 254, 0.1);
+  color: var(--accent-cyan);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+.modalFooter {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.cancelBtn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  outline: none;
+}
+
+.cancelBtn:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.applyBtn {
+  background: var(--accent-gradient);
+  color: #07080a;
+  border: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 242, 254, 0.2);
+}
+
+.applyBtn:hover {
+  opacity: 0.9;
+}
